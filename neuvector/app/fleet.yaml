@@ -3,11 +3,11 @@ helm:
   releaseName: neuvector
   chart: neuvector
   repo: https://charts.rancher.io
-  version: 104.0.4+up2.8.4
+  version: 105.0.1+up2.8.4
   values:
     global: # required for rancher authentication (https://<Rancher_URL>/)
       cattle:
-        url: https://34-123-49-217.sslip.io
+        url: https://rancher.stringlabs.us
         systemDefaultRegistry: registry.rancher.com
     controller:
       configmap:
