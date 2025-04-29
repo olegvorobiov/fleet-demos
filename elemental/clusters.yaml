@@ -5,7 +5,7 @@ metadata:
   name: store-0472-cluster
   namespace: fleet-default
 spec:
-  kubernetesVersion: v1.30.11+k3s1
+  kubernetesVersion: v1.31.7+k3s1
   rkeConfig:
     machinePools:
       - name: hoodie-pool
@@ -25,7 +25,7 @@ metadata:
   name: store-0473-cluster
   namespace: fleet-default
 spec:
-  kubernetesVersion: v1.30.11+k3s1
+  kubernetesVersion: v1.31.7+k3s1
   rkeConfig:
     machinePools:
       - name: jeans-pool
