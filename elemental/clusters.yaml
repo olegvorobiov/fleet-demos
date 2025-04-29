@@ -1,0 +1,39 @@
+---
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  name: store-0472-cluster
+  namespace: fleet-default
+spec:
+  kubernetesVersion: v1.31.3+k3s1
+  rkeConfig:
+    machinePools:
+      - name: hoodie-pool
+        quantity: 1
+        etcdRole: true
+        controlPlaneRole: true
+        workerRole: true
+        machineConfigRef:
+          kind: MachineInventorySelectorTemplate
+          name: store-0472-selector
+          apiVersion: elemental.cattle.io/v1beta1
+
+---
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  name: store-0473-cluster
+  namespace: fleet-default
+spec:
+  kubernetesVersion: v1.31.3+k3s1
+  rkeConfig:
+    machinePools:
+      - name: jeans-pool
+        quantity: 1
+        etcdRole: true
+        controlPlaneRole: true
+        workerRole: true
+        machineConfigRef:
+          kind: MachineInventorySelectorTemplate
+          name: store-0473-selector
+          apiVersion: elemental.cattle.io/v1beta1

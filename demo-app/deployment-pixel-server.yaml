@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pixel-server
+  namespace: stararc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pixel
+  template:
+    metadata:
+      labels:
+        app: pixel
+    spec:
+      containers:
+        - name: pixel
+          image: olegvorobyov90/pixel-server:3
+          ports:
+            - containerPort: 80

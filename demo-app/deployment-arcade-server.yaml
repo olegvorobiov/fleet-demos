@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcade-server
+  namespace: arcbyte
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcade
+  template:
+    metadata:
+      labels:
+        app: arcade
+    spec:
+      containers:
+        - name: arcade
+          image: olegvorobyov90/arcade-server:3
+          ports:
+            - containerPort: 80

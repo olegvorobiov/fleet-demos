@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trace-mage
+  namespace: parcade
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trace-mage
+  template:
+    metadata:
+      labels:
+        app: trace-mage
+    spec:
+      containers:
+      - name: trace-mage
+        image: olegvorobyov90/trace-mage:1

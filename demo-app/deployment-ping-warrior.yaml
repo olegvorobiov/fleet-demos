@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ping-warrior
+  namespace: monarch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ping-warrior
+  template:
+    metadata:
+      labels:
+        app: ping-warrior
+    spec:
+      containers:
+      - name: ping-warrior
+        image: olegvorobyov90/ping-warrior:10
