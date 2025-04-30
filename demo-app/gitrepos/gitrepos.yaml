@@ -1,0 +1,73 @@
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: arcbyte
+  namespace: fleet-default
+spec:
+  branch: master
+  correctDrift:
+    enabled: true
+  deleteNamespace: true
+  paths:
+    - demo-app/arcade-server
+  repo: https://github.com/olegvorobiov/fleet-demos.git
+  targets:
+  - name: store-0472
+    clusterSelector:
+      matchLabels:
+        store: "0472"
+
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: monarch
+  namespace: fleet-default
+spec:
+  branch: master
+  correctDrift:
+    enabled: true
+  deleteNamespace: true
+  paths:
+    - demo-app/ping-warrior
+  repo: https://github.com/olegvorobiov/fleet-demos.git
+  targets:
+  - name: store-0472
+    clusterSelector:
+      matchLabels:
+        store: "0472"
+
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: stararc
+  namespace: fleet-default
+spec:
+  branch: master
+  correctDrift:
+    enabled: true
+  deleteNamespace: true
+  paths:
+    - demo-app/pixel-server
+  repo: https://github.com/olegvorobiov/fleet-demos.git
+  targets:
+    - clusterGroup: all-stores
+
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  name: parcade
+  namespace: fleet-default
+spec:
+  branch: master
+  correctDrift:
+    enabled: true
+  deleteNamespace: true
+  paths:
+    - demo-app/trace-mage
+  repo: https://github.com/olegvorobiov/fleet-demos.git
+  targets:
+    - clusterGroup: all-stores

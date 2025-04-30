@@ -5,7 +5,7 @@ metadata:
   name: store-0472-cluster
   namespace: fleet-default
   labels:
-    store: anf
+    store: "0472"
 spec:
   kubernetesVersion: v1.31.7+k3s1
   rkeConfig:
@@ -27,7 +27,7 @@ metadata:
   name: store-0473-cluster
   namespace: fleet-default
   labels:
-    store: anf
+    store: "0473"
 spec:
   kubernetesVersion: v1.31.7+k3s1
   rkeConfig:
