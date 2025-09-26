@@ -1,0 +1,17 @@
+os:
+  persistent_state_paths:
+    - /opt/pwx
+    - /etc/pwx
+
+network:
+  bonds:
+    mgmt-bo:
+      interfaces:
+        - enp177s0f0np0
+        - enp177s0f1np1
+      params:
+        mode: 802.3ad
+        miimon: 100
+        lacp_rate: 1
+        xmit_hash_policy: layer3+4
+
